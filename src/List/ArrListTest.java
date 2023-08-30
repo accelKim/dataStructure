@@ -8,11 +8,17 @@ public class ArrListTest {
     System.out.println(list.size());
     list.add(10);
     System.out.println(list.get(0));
+    list.add(1, 25);
+    System.out.println(list.size());
     list.add(20);
     System.out.println(list.get(1));
     list.add(30);
     list.add(40);
     list.add(50);
+    for (int i = 0; i < list.size(); i++) {
+      System.out.print(list.get(i));
+    }
+    System.out.println();
     System.out.println(list.remove() + "가 삭제됨");
     System.out.println(list.remove() + "가 삭제됨");
     System.out.println(list.remove() + "가 삭제됨");

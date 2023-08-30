@@ -31,6 +31,17 @@ public class ArrList<E> {
     a[size++] = e;
     return true;
   }
+  public void add(int index,E e) {
+    if (a.length == size){
+//      throw new ArrayIndexOutOfBoundsException();
+      resize(a.length * 2);
+    }
+    for (int i = size - 1 ; i >= index ; i--) {
+      a[i+1] = a[i];
+    }
+    a[index] = e;
+    size++;
+  }
 
   private  void resize(int newSize) {
     System.out.println("resize가 호출됨" + newSize);
