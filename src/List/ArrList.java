@@ -18,7 +18,7 @@ public class ArrList<E> {
   }
   //연산 메서드
   public E get(int k){
-    if(size == 0)
+    if(size == 0 || k >= size)
       throw new IndexOutOfBoundsException();
     return a[k];
   }
@@ -57,6 +57,20 @@ public class ArrList<E> {
       throw new IndexOutOfBoundsException();
     E tobeDeleted = a[size - 1];
     a[size-1] = null;
+    size--;
+    if (size > 0 && size == a.length/4) {
+      resize(a.length / 2);
+    }
+    return tobeDeleted;
+  }
+  public E remove(int index){
+    if(size == 0)
+      throw new IndexOutOfBoundsException();
+    E tobeDeleted = a[index];
+    a[index] = null;
+    for (int i = index + 1 ; i < size; i++) {
+      a[i-1] = a[i];
+    }
     size--;
     if (size > 0 && size == a.length/4) {
       resize(a.length / 2);

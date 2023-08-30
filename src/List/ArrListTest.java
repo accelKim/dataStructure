@@ -19,11 +19,12 @@ public class ArrListTest {
       System.out.print(list.get(i));
     }
     System.out.println();
-    System.out.println(list.remove() + "가 삭제됨");
-    System.out.println(list.remove() + "가 삭제됨");
-    System.out.println(list.remove() + "가 삭제됨");
-    System.out.println(list.remove() + "가 삭제됨");
-    System.out.println(list.remove() + "가 삭제됨");
+    System.out.println(list.remove(0) + "가 삭제됨");
+    for (int i = 0; i < list.size(); i++) {
+      System.out.print(list.get(i));
+    }
+    System.out.println();
+
     System.out.println(list.size());
 
     ArrayList<Integer> alist = new ArrayList<>();
